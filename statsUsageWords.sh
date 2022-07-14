@@ -3,6 +3,8 @@
 #Le pasa como argumento un archivo de texto y lo pasa a otro que usa
 #para ordenar las palabras, luego las cuenta
 
+touch salida.txt
+
 TEXTO=$(cat $1)
 FILE=$(cat salida.txt)
 
@@ -16,13 +18,14 @@ do
 done
 
 (sort --reverse <(paste -d ":" salida2.txt salida.txt)) >> salida3.txt
+
 FILE2=$(cat salida3.txt)
 
-VAR=$(3)
-
-for linea in $FILE2
+for palabra in $FILE
 do
-  echo ${linea} | cut -c1-1
+  grep $palabra salida3.txt | head -1 >> salida4.txt
 done
 
-rm salida2.txt salida.txt salida3.txt
+echo "Cantidad y nombre de las 10 palabras mas usadas en el texto:"
+sort --uniq --reverse salida4.txt | head -n 10
+
