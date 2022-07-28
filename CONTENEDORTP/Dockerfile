@@ -8,6 +8,6 @@ ADD findNames.sh /home/bruno/findNames.sh
 ADD statsSentences.sh /home/bruno/statsSentences.sh
 ADD blankLinesCounter.sh /home/bruno/blankLinesCounter.sh
 
-WORKDIR /home/bruno/CONTENEDORTP
+COPY ./AnalizadorDeTexto.sh /
 
-ENTRYPOINT ["AnalizadorDeTexto.sh"]
+ENTRYPOINT ["/AnalizadorDeTexto.sh"]
