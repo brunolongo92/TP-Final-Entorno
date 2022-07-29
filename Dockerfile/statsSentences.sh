@@ -2,7 +2,7 @@
 
 FILE=$(cat $1)
 
-OIFS=$IFS
+OIFS=$IFS           #delimitador
 IFS='.'
 
 LARGA=0
@@ -11,10 +11,10 @@ CORTA=1000
 
 for oracion in $FILE
 do
-    echo "${#oracion}" >> salida.txt
+    echo "${#oracion}" >> salida.txt     #contiene una linea por oración
 done
 
-for oracion in $FILE
+for oracion in $FILE   #recorre las oraciones y guarda los valores en las variables definidas
 do
   if [ ${#oracion} -gt $LARGA ]
   then
