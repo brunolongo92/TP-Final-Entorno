@@ -1,11 +1,11 @@
 #!/bin/bash
 
-touch salida.txt
-TEXTO=$(cat $1)
+touch salida.txt #archivos auxiliares 
+TEXTO=$(cat $1) 
 
 for palabra in $TEXTO
 do
-  echo $palabra | tr -d [".",","] >> salida.txt
+  echo $palabra | tr -d [".",",",":","-"] >> salida.txt #para remover signos ortográficos usuales
 done
 
 LARGA=0
@@ -13,7 +13,7 @@ CORTA=2
 PROMEDIO=0
 LISTA=$(cat salida.txt) 
 
-for palabra in $LISTA
+for palabra in $LISTA #recorrerá las palabras y guardará los valores de las variables definidas
 do
   if [ ${#palabra} -gt $LARGA ]
   then
