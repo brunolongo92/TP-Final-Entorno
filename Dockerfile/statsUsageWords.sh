@@ -6,7 +6,6 @@ touch salida3.txt
 touch salida4.txt
 
 TEXTO=$(cat $1)
-FILE=$(cat salida.txt)
 
 for palabra in $TEXTO
 do
@@ -19,6 +18,7 @@ done
 
 (sort --reverse <(paste -d ":" salida2.txt salida.txt)) >> salida3.txt
 
+FILE=$(cat salida.txt)
 FILE2=$(cat salida3.txt)
 
 for palabra in $FILE
