@@ -1,6 +1,6 @@
 FROM debian:latest
 
-ADD textoPrueba.txt /home/brunolongo/TP-Final-Entorno/Dockerfile/textoPrueba.txt          #texto a analizar
+ADD textoPrueba.txt /home/brunolongo/TP-Final-Entorno/Dockerfile/textoPrueba.txt
 ADD wordStats.sh /home/brunolongo/TP-Final-Entorno/Dockerfile/wordStats.sh
 ADD AnalizadorDeTexto.sh /home/brunolongo/TP-Final-Entorno/Dockerfile/AnalizadorDeTexto.sh
 ADD statsUsageWords.sh /home/brunolongo/TP-Final-Entorno/Dockerfile/statsUsageWords.sh
@@ -10,7 +10,7 @@ ADD blankLinesCounter.sh /home/brunolongo/TP-Final-Entorno/Dockerfile/blankLines
 
 COPY ./AnalizadorDeTexto.sh /
 COPY ./wordStats.sh /
-COPY ./textoPrueba.txt /         #texto a analizar
+COPY ./textoPrueba.txt /
 COPY ./statsUsageWords.sh /
 COPY ./findNames.sh /
 COPY ./statsSentences.sh /
