@@ -22,15 +22,14 @@ do
   then
     CORTA=${#palabra}
   fi
-  PROMEDIO=$(($PROMEDIO+${#palabra}))
+  PROMEDIO=$(($PROMEDIO + ${#palabra}))
 done
 
 echo $PROMEDIO
 
 PROMEDIO=$(($PROMEDIO/$(wc -l < salida.txt)))
 
-cat salida.txt
-echo wc -l < salida.txt
+wc -l < salida.txt
 echo $PROMEDIO
 
 echo "La palabra más larga tiene "$LARGA "letras."
