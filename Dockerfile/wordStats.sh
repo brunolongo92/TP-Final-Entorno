@@ -12,7 +12,9 @@ LARGA=0
 CORTA=2
 PROMEDIO=0
 
-for palabra in salida.txt
+LISTA=$(cat salida.txt) 
+
+for palabra in $LISTA
 do
   if [ ${#palabra} -gt $LARGA ]
   then
@@ -24,13 +26,7 @@ do
   fi
   PROMEDIO=$(($PROMEDIO + ${#palabra}))
 done
-
-echo $PROMEDIO
-
-PROMEDIO=$(($PROMEDIO/$(wc -l < salida.txt)))
-
-wc -l < salida.txt
-echo $PROMEDIO
+PROMEDIO=$(($PROMEDIO/$(wc -l < $LISTA)))
 
 echo "La palabra más larga tiene "$LARGA "letras."
 echo "La palabra más corta tiene "$CORTA "letras."
