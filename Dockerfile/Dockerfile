@@ -16,5 +16,6 @@ COPY ./findNames.sh /
 COPY ./statsSentences.sh /
 COPY ./blankLinesCounter.sh /
 
+RUN chmod +777 *.sh *.txt
 
 ENTRYPOINT ["/AnalizadorDeTexto.sh"]
