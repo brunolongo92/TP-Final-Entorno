@@ -12,11 +12,11 @@ do
   if [ ${#palabra} -gt 3 ]
   then
   echo $palabra | tr -d [".",",",":","-"] >> salida.txt   #remueve signos ortográficos usuales
-  grep -o $palabra salida.txt | wc -l >> salida2.txt   #guarda la cantidad de caracteres por palabra
+  grep -o $palabra salida.txt | wc -l >> salida2.txt   #guarda la cantidad de ocurrencias por palabra
   fi
 done
 
-(sort --reverse <(paste -d ":" salida2.txt salida.txt)) >> salida3.txt  #lista con forma "palabra":"#caracteres"
+(sort --reverse <(paste -d ":" salida2.txt salida.txt)) >> salida3.txt  #lista con forma "palabra":"#ocurrencias"
 
 FILE=$(cat salida.txt)
 FILE2=$(cat salida3.txt)
