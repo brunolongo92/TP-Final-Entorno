@@ -12,7 +12,7 @@ do
   if [ ${#palabra} -gt 3 ]
   then
   echo $palabra | tr -d [".",",",":","-"] >> salida.txt   #remueve signos ortográficos usuales
-  grep -o -i $palabra salida.txt | wc -l >> salida2.txt   #guarda la cantidad de caracteres por palabra
+  grep -o $palabra salida.txt | wc -l >> salida2.txt   #guarda la cantidad de caracteres por palabra
   fi
 done
 
@@ -29,4 +29,4 @@ done
 echo "Cantidad y nombre de las 10 palabras mas usadas en el texto:"
 sort --uniq --reverse salida4.txt | head -n 10          #selecciona los 10 mayores de salida4.txt
 
-rm salida.txt salida2.txt salida3.txt salida4.txt 
+rm salida.txt salida2.txt salida3.txt salida4.txt
