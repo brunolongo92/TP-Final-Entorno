@@ -9,7 +9,7 @@ do
 done
 
 LARGA=0
-CORTA=2
+CORTA=1000
 PROMEDIO=0
 LISTA=$(cat salida.txt) 
 
